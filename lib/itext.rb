@@ -8,8 +8,9 @@ module Itext
 	  raise
 	end
 
+	include_package "com.itextpdf.text.pdf"
+	include_package "java.io"
+	
 end
 
 # require 'itext/document'
-include_package "com.itextpdf.text.pdf"
-include_package "java.io"
