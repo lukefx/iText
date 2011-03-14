@@ -1,7 +1,9 @@
 module Itext
 
-  class Document
-	include 'com.itextpdf.text.Document'
+  import 'com.itextpdf.text.Document'
+
+  class Doc < com.itextpdf.text.Document
+	
   end
 
 end

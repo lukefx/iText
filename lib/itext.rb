@@ -10,4 +10,6 @@ module Itext
 
 end
 
-require 'itext/document'
+# require 'itext/document'
+include_package "com.itextpdf.text.pdf"
+include_package "java.io"
