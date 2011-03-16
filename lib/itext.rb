@@ -1,3 +1,5 @@
+$:.unshift File.dirname(__FILE__) # For use/testing when no gem is installed
+
 module Itext
 
 	begin
@@ -10,4 +12,4 @@ module Itext
 	
 end
 
-require 'itext/document'
+require 'itext/pdf'
