@@ -1,8 +1,12 @@
 module Itext
 
-  import 'com.itextpdf.text.Document'
+  include_package "com.itextpdf.text"
 
-  class Doc < com.itextpdf.text.Document
+  class Pdf
+	
+  	def initialize
+  		puts "new PDF created"
+  	end
 	
   end
 
