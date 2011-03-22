@@ -14,13 +14,19 @@ module Itext
     
     attr_accessor :document, :writer
     
-    def initialize(config = {})
-      default = { :format => "A4"}.merge(config)
+    def initialize(filename, options = {})
+      default = { :format => "A4"}.merge(options)
       @document = Document.new(PageSize::A4)
-      @writer = PdfWriter.get_instance(@document, FileOutputStream.new('completed.pdf'))
+      @writer = PdfWriter.get_instance(@document, FileOutputStream.new(filename))
       @document.open
     end
     
+	def self.generate(filename, options={}, &block)
+		pdf = Pdf.new(filename, options)
+		yield pdf if block_given?
+		pdf.close
+	end
+	
     def add(testo)
       @document.add(Paragraph.new(testo))
     end
